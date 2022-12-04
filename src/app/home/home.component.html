@@ -1,0 +1,83 @@
+<p>home works!</p>
+<div class="page-content" style="margin-top:100px">
+    <div class="container">
+        <!-- BEGIN ACTUAL CONTENT -->
+        <!-- uiView:  --><div ui-view="" class="fade-in-up ng-scope"><span class="label label-md label-warning  text-center ng-scope">Lịch cơ
+quan</span>
+<br class="ng-scope">
+<div class="row ng-scope">
+
+<div class="col-md-6">
+
+<!-- BEGIN PORTLET-->
+<div class="portlet box red">
+<div class="portlet-title">
+    <div class="caption uppercase ng-binding">
+        <i class="fa fa-calendar"></i>Hôm nay Chủ Nhật ngày 27/11/2022 &nbsp; <span class="badge badge-warning bold ng-binding">0</span>
+    </div>
+</div>
+<div class="portlet-body form" style="height:300px;">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- ngIf: today_list.length==0 --><span ng-if="today_list.length==0" class="text-danger ng-scope">Không
+                có lịch </span><!-- end ngIf: today_list.length==0 -->
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!-- ngIf: today_list.length>0 -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END PORTLET-->
+
+</div>
+<div class="col-md-6">
+
+<!-- BEGIN PORTLET-->
+<div class="portlet box blue-hoki">
+<div class="portlet-title">
+    <div class="caption uppercase">
+        <i class="fa fa-calendar"></i>Lịch làm việc ngày tiếp theo &nbsp; <span class="badge badge-warning bold ng-binding">0</span>
+    </div>
+</div>
+<div class="portlet-body form" style="height:300px;">
+    <div class="row">
+
+        <div class="col-md-12">
+            <!-- ngIf: nextday_list.length==0 --><span ng-if="nextday_list.length==0" class="text-danger text-center ng-scope">Không có lịch </span><!-- end ngIf: nextday_list.length==0 -->
+            <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                <!-- ngIf: nextday_list.length>0 -->
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- END PORTLET-->
+
+</div>
+
+</div>
+<div class="row ng-scope">
+<div class="col-md-12">
+
+<div class="portlet light bordered">
+<div class="portlet-title">
+    <div class="caption  uppercase text-center text-info">
+        <i class="fa fa-calendar"></i>Thông báo của cơ quan 
+    </div>
+</div>
+<div class="portlet-body form">
+    <div class="row">
+        <div class="col-md-12 ng-binding" ng-bind-html="noti_content"><p>dasdasdasdasdasdasdasdsad</p>
+</div>
+        
+    </div>
+</div>
+</div>
+</div>
+</div>
+
+</div>
+        <!-- END ACTUAL CONTENT -->
+    </div>
+</div>

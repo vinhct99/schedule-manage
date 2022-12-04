@@ -1,0 +1,74 @@
+<div class="container-fluid header">
+    <div class="inner-header">
+      <div class="logo">
+        <a href="#" style="color: white; font-weight: bold;">MANAGE</a>
+      </div>
+      <div class="main-header" style="margin-left: auto">
+        <nav>
+          <ul id="main-menu">
+            <li><a class="pointer"rel="nofollow" style="color: white;" (click)="view_cq()">Lịch cơ quan</a>
+            </li>
+            <li><a class="pointer" rel="nofollow" style="color: white;" (click)="view_pb()">Lịch phòng ban</a>
+            </li>
+            <li><a class="pointer" rel="nofollow" style="color: white;" (click)="view_notify()">Thông báo</a>
+            </li>
+            <li>
+              <!-- routerLink="/login" routerLinkActive -->
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="user" style="padding-right: 1%; margin-right: 7%">
+        <nav>
+            <ul id="user-menu" *ngIf="login">
+              <li>
+                <a class="pointer" rel="nofollow" (click)="user_login()">Đăng nhập</a>
+              </li>
+            </ul>
+            <ul id="user-menu" *ngIf="logout">
+              <li>
+                <a class="click" rel="nofollow"><i class="fa fa-home"></i><span (click)="test_manage()">{{userLogin.userName}}</span>
+                </a>
+              </li>
+              <li>
+                <a class="click" style="color: black" rel="nofollow" href=""><span
+                    (click)="user_logout()"><i class="fa fa-sign-out"></i> Đăng xuất</span></a>
+              </li>
+            </ul>
+  
+  
+  
+          <!-- <ul id="user-menu" *ngIf="logout">
+           
+            <li class="user-hover">
+              
+              <div class="popover-user">
+            
+                <div class="row popover-user-main">
+                  <div class="user-menu-left margin-bottom: 12px col-sm-6">
+                    <ul class="user-links"> 
+                      <li *ngIf="">
+                        <a class="click" rel="nofollow"><i class="fa fa-home"></i><span (click)="routerAdmin()">Trang quản trị viên</span></a>
+                      </li>
+                      <li>
+                        <a class="click" rel="nofollow"><i class="fa fa-home"></i><span (click)="test_manage()">{{userLogin.userName}}</span>
+                        </a>
+                      </li>
+                   
+                      <li>
+                        <a class="click" style="color: black" rel="nofollow" href=""><span
+                            (click)="user_logout()"><i class="fa fa-sign-out"></i> Đăng xuất</span></a>
+                      </li>
+                    </ul>
+                  </div>
+              
+                </div>
+              </div>
+            </li>
+    
+          </ul> -->
+        </nav>
+      </div>
+    </div>
+  </div>
+  

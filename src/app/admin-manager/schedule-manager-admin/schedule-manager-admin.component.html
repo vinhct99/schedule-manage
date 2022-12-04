@@ -1,0 +1,77 @@
+<app-header></app-header>
+<div class="page-content">
+    <div class="container">
+        <div class="table" style="margin-top:100px;    height: 100%;
+width: 100%">
+            <table class="table table-bordered table-post-listing" cellspacing="0" width="100%">
+
+                <thead>
+
+                    <tr>
+                        <th class="nowrap" >STT</th>
+                        <th class="nowrap">Ngày/giờ</th>
+                        <th class="nowrap" style="min-width: 150px;">Nội dung</th>
+                        <th class="nowrap">Hiển thị</th>
+                        <th class="nowrap">Hoạt động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="js-item-row js-item-row-399113 out_of_service  approved js-post-item js-post-item-399113 even"
+                        data-post-id="399113">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                        </div></td>
+                        <td>
+                            
+                            <button class="btn btn-xs btn-danger">
+                                <span>Xóa</span>
+                            </button>
+                           
+                            <div>
+                            </div>
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row" ng-show="isAddNew==true">
+            <div class="col-md-6 col-md-offset-3">
+                <form class="form-horizontal ng-pristine ng-invalid ng-invalid-required" role="form" name="form">							
+                    <div class="col-md-12 text-center bold h4 text-info uppercase">Thêm mới lịch làm việc</div>
+                    <div class="form-group">
+                    <label class="label-warning">Chọn phòng ban</label>
+                         <select type="text" class="form-control ng-pristine ng-untouched ng-valid" ng-model="schedule.dep_id" ng-options="dep.id as dep.dep_name for dep in departmentlist">
+                            <option label="Lịch cơ quan" value="number:0" selected="selected">Lịch cơ quan</option>
+                            <option label="Phòng Hành Chính" value="number:1">Phòng Hành Chính</option>
+                            <option label="Phòng Nghiên cứu, Ứng dụng và Phát triển" value="number:2">Phòng Nghiên cứu, Ứng dụng và Phát triển</option>
+                            <option label="Phòng Quản lý Trung tâm Tích hợp Dữ liệu" value="number:4">Phòng Quản lý Trung tâm Tích hợp Dữ liệu</option>
+                            <option label="Phòng Nghiên cứu" value="number:2006">Phòng Nghiên cứu</option>
+                        </select> 						
+                    
+                    </div>		
+                    <div class="form-group" >
+                        <label class="label-warning">Thời gian</label> <input class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" name="datetime" id="datetime" ng-model="schedule.datetime" datetime-picker="" date-format="yyyy-MM-dd HH:mm" close-on-select="false" required=""> <span ng-show="form.datetime.$dirty &amp;&amp; form.datetime.$error.required" class="help-block ng-hide">Nhập thời gian</span>
+                    </div>
+
+                    <div class="form-group" >
+                        <label class="label-warning">Nội dung</label>
+                        <textarea class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required" id="content" name="content" ng-model="schedule.content" rows="5" required=""></textarea>
+                        <span ng-show="form.content.$dirty &amp;&amp; form.content.$error.required" class="help-block ng-hide">Nhập nội dung</span>
+                    </div>
+                    <div class="form-actions">
+                        
+                        <!-- ngIf: isAddNew==true --><button type="submit" ng-disabled="form.$invalid " ng-if="isAddNew==true" class="btn btn-primary ng-scope" ng-click="createSchedule(schedule)" disabled="disabled">Thêm mới</button><!-- end ngIf: isAddNew==true -->
+
+                        <a href="" class="btn btn-link" ng-click="cancelAddNewClick()">Cancel</a>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

@@ -1,0 +1,71 @@
+<p-toast></p-toast>
+
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <form #loginForm="ngForm" (ngSubmit)="onFormSubmit(loginForm)">
+            <div class="card-body p-5 text-center">
+  
+              <h3 class="mb-5">Sign in</h3>
+              <input type="username" id="userName" class="form-control form-control-lg"  
+              #NameLogin="ngModel" name="userName" placeholder= "Enter User Name" required [(ngModel)]="userName"/>
+              <div class="leftform" style="color:red;float:left" *ngIf="(NameLogin.invalid &&  loginForm.submitted) || (NameLogin.touched) || userName == ''  "  [ngClass] = "'error'">
+                <span style="color:red; font-size: 15px;" *ngIf="NameLogin.errors?.['required']">
+                  Không được để trống
+               </span> 
+            </div>
+            <input type="password" id="typePasswordX-2" class="form-control form-control-lg"  name="passWord" required  
+            #PassWordLogin="ngModel" placeholder="*********" [(ngModel)]="passWord"/>
+            <div class="leftform" style="color:red;float:left" *ngIf="(PassWordLogin.invalid &&  loginForm.submitted) || (PassWordLogin.touched) || userName == ''  "  [ngClass] = "'error'">
+                <span style="color:red; font-size: 15px;" *ngIf="PassWordLogin.errors?.['required']">
+                  Không được để trống
+               </span> 
+            </div>
+              <!-- <div class="form-outline mb-4">
+                <input type="username" id="username" class="form-control form-control-lg" [(ngModel)]="Name" [pattern]="NamePattern" 
+                #NameLogin="ngModel" name="Name" placeholder="Enter Name" required/>
+                
+                <div *ngIf="NameLogin.errors && loginForm.submitted" [ngClass] = "'error'">  
+                    <div *ngIf="NameLogin.errors" >  
+                       <span style="color:red;font-size: 15px;">Tên không hợp lệ </span><br>         
+                    </div>
+                  </div>
+                    <div class="leftform" style="color:red;float:left" *ngIf="(NameLogin.invalid &&  loginForm.submitted) || (NameLogin.touched) || Name == ''  "  [ngClass] = "'error'">
+                    <span style="color:red; font-size: 15px;" *ngIf="NameLogin.errors?.['required']">
+                      Không được để trống
+                   </span> 
+                  </div> 
+              </div> -->
+  
+              <!-- <div class="form-outline mb-4">
+                <input type="password" id="typePasswordX-2" class="form-control form-control-lg"[(ngModel)]="PassWord"
+                #PassWordLogin="ngModel" name="PassWord" required  placeholder="*********"/>
+                <div *ngIf="PassWordLogin.errors && loginForm.submitted && !isValidFormSubmitted" [ngClass] = "'error'">  
+                    <div *ngIf="PassWordLogin.errors" >  
+                       <span style="color:red;font-size: 15px;">Mật khẩu không hợp lệ </span><br>
+                    </div>
+                  </div>
+                <div class="leftform" style="color:red;float:left" *ngIf="(PassWordLogin.invalid &&  loginForm.submitted) || (PassWordLogin.touched) || PassWord == ''  "  [ngClass] = "'error'">
+                    <span style="color:red; font-size: 15px;" *ngIf="PassWordLogin.errors?.['required']">
+                      Không được để trống
+                   </span> 
+                  </div> 
+              </div> -->
+              <br>
+              <br>
+              <div>
+                <button class="btn btn-primary btn-lg btn-block" id="sign-up" type="submit">Login</button>
+              
+              </div>
+           
+             
+            </div>
+        </form>
+        
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

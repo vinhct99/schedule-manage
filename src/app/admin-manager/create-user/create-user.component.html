@@ -1,0 +1,103 @@
+<app-header></app-header>
+
+<section class="d-flex justify-content-center mb-2" style="background-color: #eee;margin: top 150px;;margin: center;">
+    <form #createUserForm="ngForm" (ngSubmit)="onFormSubmit(createUserForm)"></form>
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+
+                    <a type="text" value="" style="margin: top 150px;"> </a>
+                </div>
+            </div>
+            <div class="container">
+                <div class="col-lg-8">
+                    <a type="text" class="form-control" value="" style="margin: top 150px">Thêm mới người dùng </a>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Họ và Tên</label>
+                                    <input type="fullname" id="fullname" class="form-control form-control-lg"
+                                        name="fullname" placeholder="Enter Full Name" required [(ngModel)]="fullName" />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Tên đăng nhập</label>
+                                    <input type="username" id="userName" class="form-control form-control-lg"
+                                        name="userName" placeholder="Enter User Name" required [(ngModel)]="userName" />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Mật khẩu</label>
+                                    <input type="password" id="password" class="form-control form-control-lg"
+                                        name="password" placeholder="Enter User Name" required [(ngModel)]="passWord" />
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="bmd-label-floating">Nhập lại mật khẩu</label>
+                                <input type="username" id="userName" class="form-control form-control-lg"  
+                                name="userName" placeholder= "Enter User Name" required [(ngModel)]="userName"/>
+                            </div>
+                        </div> -->
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Email</label>
+                                    <input type="email" id="email" class="form-control form-control-lg" name="email"
+                                        placeholder="Enter Email" required [(ngModel)]="email" />
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Số điện thoại</label>
+                                    <input type="phoneNumber" id="phoneNumber" class="form-control form-control-lg"
+                                        name="phoneNumber" placeholder="Enter Phone" required
+                                        [(ngModel)]="phoneNumber" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="bmd-label-floating">Phòng ban</label>
+                                    <div ng-app="myApp" ng-controller="myCtrl">
+                                        <select ng-model="selectedName" ng-options="item for item in names"></select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group border border-danger">
+                                <label>
+                                    <h4>Quyền quản trị:</h4>
+                                </label>
+                                <label ng-repeat="permission in vm.user.permissions" class="ng-binding ng-scope">
+                                    <input type="checkbox" value="2" ng-model="permission.selected"
+                                        class="ng-pristine ng-untouched ng-valid">Quyền hiển thị cơ quan
+                                    &nbsp;&nbsp;
+                                </label>
+                                <label ng-repeat="permission in vm.user.permissions" class="ng-binding ng-scope">
+                                    <input type="checkbox" value="3" ng-model="permission.selected"
+                                        class="ng-pristine ng-untouched ng-valid">Quyền hiển thị phòng ban
+                                    &nbsp;&nbsp;
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center mb-2">
+                <button type="button" id="sign-up" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-outline-primary ms-1" (click)="back_userManage()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+</section>
+<app-footer></app-footer>
